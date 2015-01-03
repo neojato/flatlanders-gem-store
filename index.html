@@ -9,10 +9,13 @@
   <body class="container list-group" ng-controller="StoreController as store">
     <!--  Product Container  -->
     <div class="list-group-item" ng-repeat="product in store.products">
-      <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+      </h3>
 
       <!-- Image Gallery  -->
-      <div class="gallery">
+      <div class="gallery" ng-show="product.images.length">
         <div class="img-wrap">
           <img ng-src="{{product.images[0]}}" />
         </div>
