@@ -17,8 +17,8 @@
         <em class="pull-right">{{product.price | currency}}</em>
       </h3>
 
-      <section ng-show="product.images.length">
-        <img ng-src="{{product.images[0]}}" />
+      <section ng-show="product.images.length" ng-controller="GalleryController as gallery">
+        <img ng-src="{{product.images[gallery.current]}}" />
         <ul class="list-inline thumbs">
           <li class="thumbnail" ng-repeat="image in product.images">
             <img ng-src="{{image}}" />
