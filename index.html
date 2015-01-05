@@ -34,9 +34,7 @@
           <li ng-class="{ active:tab.isSet(3) }">
             <a href ng-click="tab.setTab(3)">Reviews</a></li>
         </ul>
-        <div ng-show="tab.isSet(1)">
-          <h4>Description</h4>
-          <blockquote>{{product.description}}</blockquote>
+        <div ng-show="tab.isSet(1)" ng-include="'product-description.html'">
         </div>
         <div ng-show="tab.isSet(2)">
           <h4>Specs</h4>
