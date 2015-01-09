@@ -6,20 +6,26 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="products.js"></script>
   </head>
-  <body class="container list-group" ng-controller="StoreController as store">
+  <body ng-controller="StoreController as store">
+    <!--  Store Header  -->
     <header>
       <h1 class="text-center">Flatlander Crafted Gems</h1>
       <h2 class="text-center">– an Angular store –</h2>
     </header>
-    <div class="list-group-item" ng-repeat="product in store.products">
-      <h3>
-        {{product.name}}
-        <em class="pull-right">{{product.price | currency}}</em>
-      </h3>
 
-      <product-gallery></product-gallery>
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
 
-      <product-tabs></product-tabs>
+        <!-- Image Gallery  -->
+        <product-gallery></product-gallery>
+
+        <!-- Product Tabs  -->
+        <product-tabs></product-tabs>
+      </div>
+
     </div>
   </body>
 </html>
